@@ -12,27 +12,21 @@ import Products from './pages/Products';
 
 const App = () => {
     return (
-        <>
-            <Routes>
-                <Route>
-                    <Route path="/" element={<Layout />}>
-                        <Route index element={<Home />} />
-                        
-                        <Route path="about" element={<About />} />
-                        <Route path="products">
-                            <Route index element={<Products />} />
-                            <Route path=":productID" element={<ProductDetail />} />
-                        </Route>
-                        <Route path="board">
-                            <Route index element={<Board />} />
-                            <Route path=":boardID" element={<BoardDetail />} />
-                        </Route>
-                        <Route path="*" element={<NotFound />} />
-                        나머지 내용
-                    </Route>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<About />} />
+                <Route path="products">
+                    <Route index element={<Products />} />
+                    <Route path=":productID" element={<ProductDetail />} />
                 </Route>
-            </Routes>
-        </>
+                <Route path="board">
+                    <Route index element={<Board />} />
+                    <Route path=":boardID" element={<BoardDetail />} />
+                </Route>
+                <Route path="*" element={<NotFound />} />
+            </Route>
+        </Routes>
     );
 };
 
